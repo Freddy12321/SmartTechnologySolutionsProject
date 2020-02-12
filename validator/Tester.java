@@ -1,0 +1,21 @@
+package sts.test.validator;
+
+public class Tester {
+	//each test case throws a different error, with case 1 being valid
+	static byte[] testCase1= { 0x02, 0x10, 0x02, 0x0A, 0x10, 0x10, 0x07, 0x08, 0x03, 0x14 };
+	static byte[] testCase2= { 0x02, 0x10, 0x02, 0x0A, 0x10, 0x10, 0x07, 0x08, 0x03, 0x15 };
+	static byte[] testCase3= { 0x01, 0x10, 0x02, 0x0A, 0x10, 0x10, 0x07, 0x08, 0x03, 0x14 };
+	static byte[] testCase4= { 0x02, 0x10, 0x02, 0x0A, 0x10, 0x11, 0x07, 0x08, 0x03, 0x15 };
+	static byte[] testCase5= { 0x02, 0x02, 0x0A, 0x10, 0x10, 0x07, 0x08, 0x03, 0x14 };
+	static byte[] testCase6= { 0x02, 0x10, 0x02, 0x0A, 0x10, 0x10, 0x07, 0x08, 0x01, 0x14 };
+	public static void main(String[] args) {
+		Validator validate= new Implementor();
+		System.out.println("Test Case 1: "+validate.isValid(testCase1));
+		System.out.println("Test Case 2: "+validate.isValid(testCase2));
+		System.out.println("Test Case 3: "+validate.isValid(testCase3));
+		System.out.println("Test Case 4: "+validate.isValid(testCase4));
+		System.out.println("Test Case 5: "+validate.isValid(testCase5));
+		System.out.println("Test Case 6: "+validate.isValid(testCase6));
+		
+	}
+}
